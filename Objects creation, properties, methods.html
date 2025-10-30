@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+
+
+  <script>
+    let person = {
+      name: "Shafiq",
+      age: 20,
+      sayHello: function() {
+        document.write("Hello, my name is " + this.name + " and I am " + this.age + " years old.<br>");
+      }
+    };
+
+    // Access object properties
+    document.write("Name: " + person.name + "<br>");
+    document.write("Age: " + person.age + "<br><br>");
+
+    // Modify object properties
+    person.age = 21;
+    person.dept = "cse"
+    document.write("Updated Age: " + person.age + "<br>");
+    document.write("Added prop: " + person.dept + "<br>");
+
+    // Call the object method
+    person.sayHello();
+  </script>
+
+</body>
+</html>
