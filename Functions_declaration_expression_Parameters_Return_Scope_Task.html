@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+</head>
+
+<body>
+    <script>
+        // Write a function to add two numbers.
+        function add(a, b) {
+            return (
+                console.log(a + b)
+            )
+        }
+        add(2, 4)
+
+
+        // Write a function expression to multiply two numbers.
+        let x = multiply(2, 4)
+
+        function multiply(a, b) {
+            return (a * b)
+        }
+
+        console.log(x)
+
+
+        // Write an arrow function to subtract two numbers.
+        const subtract = (a, b) => {
+            return (a - b)
+        }
+
+        console.log(subtract(5, 3))
+
+
+        // Write a function with parameters and return a value.
+
+        function divide(a, b) {
+            return a / b
+        }
+
+        let result = divide(20, 4)
+        console.log(result)
+
+
+        // Demonstrate global vs local scope.
+        let globalVar = "Global"
+
+        function scope() {
+            let localVar = "Local"
+            console.log(globalVar)
+            console.log(localVar)
+        }
+
+        scope();
+        console.log(localVar)
+
+
+    </script>
+</body>
+
+</html>
