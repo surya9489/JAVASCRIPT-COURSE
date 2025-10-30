@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop statement</title>
+</head>
+
+<body>
+
+    <script>
+        console.log("Print numbers 1 to 10 using for loop.")
+
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+
+
+        console.log("Print numbers 1 to 5 using while loop.")
+
+        let j = 1;
+        while (j <= 5) {
+            console.log(j);
+            j++;
+        }
+
+
+        console.log("Print numbers 1 to 3 using do-while loop.")
+
+        let k = 1;
+        do {
+            console.log(k);
+            k++;
+        } while (k <= 3);
+
+
+        console.log("Print numbers 1 to 10, skip 5 using continue, stop at 8 using break.")
+
+        for (let x = 1; x <= 10; x++) {
+
+            if (x === 5) {
+                continue;
+            }
+            if (x === 8) {
+                break;
+            }
+            console.log(x);
+        }
+
+    </script>
+
+</body>
+
+</html>
