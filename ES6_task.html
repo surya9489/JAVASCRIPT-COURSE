@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+</head>
+<body>
+
+  <script>
+    // let and const
+    let userName = "surya";
+    const country = "India";
+
+    userName = "prakash";
+    console.log(`User: ${userName}, Country: ${country}`);
+
+
+    // Template Literals
+    const age = 22;
+    console.log(`Hello, my name is ${userName} and I am ${age} years old.`);
+
+
+    // Function with Default Parameters
+    function greet(name = "Guest", message = "Welcome!") {
+      console.log(`${message}, ${name}!`);
+    }
+
+    greet();
+    greet("prakash", "Hello");
+
+
+    // Array and Object Destructuring
+    const colors = ["red", "green", "blue"];
+    const [first, second, third] = colors;
+    console.log(`Colors: ${first}, ${second}, ${third}`);
+
+    const person = { name: "shafiq", age: 25, city: "Chennai" };
+    const { name, city } = person;
+    console.log(`Name: ${name}, City: ${city}`);
+
+
+    // Spread Operator
+    const arr1 = [1, 2, 3];
+    const arr2 = [...arr1, 4, 5];
+    console.log("Copied Array:", arr2);
+
+
+    // Rest Operator
+    function sum(...numbers) {
+      return numbers.reduce((total, num) => total + num, 0);
+    }
+
+    console.log("Sum:", sum(10, 20, 30, 40));
+
+
+    // Arrow Functions
+    const multiply = (a, b) => a * b;
+    const square = n => n * n;
+
+    console.log(multiply(5, 3));
+    console.log(square(4));
+
+
+    // Class with Constructor
+    class Student {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      introduce() {
+        console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+      }
+    }
+
+    const student1 = new Student("Shafiq", 22);
+    student1.introduce();
+
+  </script>
+</body>
+</html>
