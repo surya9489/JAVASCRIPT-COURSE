@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn1">click</button>
+    <h1 id="btn1_text"></h1>
+
+    <input type="text" placeholder="Type here" id="input1">
+    <p id="input1_text"></p>
+
+
+    <form id="form">
+        <input type="text" id="input2">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="form_text"></p>
+
+    <script>
+
+        // click event
+
+        const btn1 = document.getElementById("btn1")
+        const btn1_text = document.getElementById("btn1_text")
+
+        btn1.addEventListener("click", function () {
+            btn1_text.textContent = "Hello world";
+        })
+
+        //typing
+
+        const input1 = document.getElementById("input1")
+        const input1_text = document.getElementById("input1_text")
+
+        input1.addEventListener("input", function () {
+            input1_text.textContent = this.value
+        })
+
+        //submit event
+
+        const form = document.getElementById("form")
+        const input2 = document.getElementById("input2")
+        const form_text = document.getElementById("form_text")
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            form_text.textContent = input2.value;
+        });
+
+
+
+    </script>
+</body>
+
+</html>
