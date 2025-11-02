@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="userInput(greetUser)">Click</button>
+    <button onclick="runPromise()">click2</button>
+    <button onclick="runAsyncAwait()">click3</button>
+
+    <script>
+
+        function userInput(callback) {
+            let name = prompt("Enter your name:");
+            callback(name);
+        }
+
+        function greetUser(name) {
+            alert("Hello, " + name);
+        }
+
+
+        function checkNumber(num) {
+            return new Promise((resolve, reject) => {
+                if (num > 0) {
+                    resolve("Number is positive");
+                } else {
+                    reject("Number is negative");
+                }
+            });
+        }
+
+        function runPromise() {
+            let number = prompt("Enter a number:");
+            checkNumber(number)
+                .then((message) => {
+                    alert(message);
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        }
+
+        async function runAsyncAwait() {
+            try {
+                let number = parseInt(prompt("Enter a number:"));
+                let message = await checkNumber(number);
+                alert(message);
+            } catch (error) {
+                alert(error);
+            }
+        }
+    </script>
+</body>
+
+</html>
