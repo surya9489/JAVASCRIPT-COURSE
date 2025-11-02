@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sync()">Synchronous</button>
+    <button onclick="async()">Asynchronous</button>
+    <button onclick="setTime()">SetTimeout</button>
+    <button onclick="counter()">counter</button>
+
+    <p id="output"></p>
+
+    <button onclick="userInput(greetUser)">Click</button>
+    <button onclick="runPromise()">click2</button>
+
+    <script>
+
+        function sync() {
+            let output = document.getElementById("output");
+            output.textContent = "start";
+
+            for (let i = 0; i < 5; i++) {
+                console.log(i);
+            }
+
+            output.textContent = "stop";
+        }
+
+        function async() {
+            let output = document.getElementById("output");
+
+            output.textContent = "start"
+
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    console.log(i);
+                }
+
+                output.textContent = "stop"
+            }, 4000)
+
+        }
+
+        function setTime() {
+            setTimeout(() => {
+                document.getElementById("output").textContent = "message after 2 seconds. "
+            }, 2000)
+        }
+
+
+        function counter() {
+            count = 0;
+
+            setInterval(() => {
+                count++;
+                document.getElementById("output").innerText = "Counter: " + count;
+            }, 1000);
+        }
+
+
+        function userInput(callback) {
+            let name = prompt("Enter your name:");
+            callback(name);
+        }
+
+        function greetUser(name) {
+            alert("Hello, " + name);
+        }
+
+
+        function checkNumber(num) {
+            return new Promise((resolve, reject) => {
+                if (num > 0) {
+                    resolve("Number is positive");
+                } else {
+                    reject("Number is negative");
+                }
+            });
+        }
+
+        function runPromise() {
+            let number = parseInt(prompt("Enter a number:"));
+            checkNumber(number)
+                .then((message) => {
+                    alert(message);
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        }
+
+ 
+    </script>
+
+</body>
+
+</html>
