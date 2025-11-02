@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+
+  <input type="text" id="localInput" placeholder="Enter value for Local Storage">
+  <button onclick="saveLocal()">Save to LocalStorage</button>
+  <button onclick="getLocal()">Get from LocalStorage</button>
+  <p id="localResult"></p>
+
+  <input type="text" id="sessionInput" placeholder="Enter value for Session Storage">
+  <button onclick="saveSession()">Save to SessionStorage</button>
+  <button onclick="getSession()">Get from SessionStorage</button>
+  <p id="sessionResult"></p>
+
+  <script>
+    // Save to localStorage
+    function saveLocal() {
+      let value = document.getElementById("localInput").value;
+      localStorage.setItem("localData", value);
+      alert("Saved to localStorage!");
+    }
+
+    // Retrieve from localStorage
+    function getLocal() {
+      let data = localStorage.getItem("localData");
+      document.getElementById("localResult").textContent = data
+        ? "Local Storage Value: " + data
+        : "No data found in localStorage.";
+    }
+
+    // Save to sessionStorage
+    function saveSession() {
+      let value = document.getElementById("sessionInput").value;
+      sessionStorage.setItem("sessionData", value);
+      alert("Saved to sessionStorage!");
+    }
+
+    // Retrieve from sessionStorage
+    function getSession() {
+      let data = sessionStorage.getItem("sessionData");
+      document.getElementById("sessionResult").textContent = data
+        ? "Session Storage Value: " + data
+        : "No data found in sessionStorage.";
+    }
+  </script>
+
+</body>
+</html>
