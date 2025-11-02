@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    h2, p {
+      transition: all 0.3s ease;
+    }
+
+    .highlight {
+      color: blue;
+      font-weight: bold;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: navy;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="title">Welcome to Home page</h2>
+  <p class="desc">This is paragraph 1.</p>
+  <p class="desc">This is paragraph 2.</p>
+  <p class="desc">This is paragraph 3.</p>
+
+  <button onclick="changeUsingId()">Btn-1</button>
+  <button onclick="changeUsingQuerySelector()">Btn-2</button>
+  <button onclick="changeUsingQuerySelectorAll()">Btn-3</button>
+
+
+  <script>
+    // getElementById()
+    function changeUsingId() {
+      const title = document.getElementById("title");
+      title.style.color = "red";
+      title.innerText = "Title was Changed";
+    }
+
+    // querySelector()
+    function changeUsingQuerySelector() {
+      const firstParagraph = document.querySelector(".desc");
+      firstParagraph.style.fontSize = "20px";
+      firstParagraph.style.color = "green";
+      firstParagraph.innerText = "Paragraph was changed";
+    }
+
+    // querySelectorAll()
+    function changeUsingQuerySelectorAll() {
+      const allParagraphs = document.querySelectorAll(".desc");
+      allParagraphs.forEach((para, index) => {
+        para.classList.add("highlight");
+        para.innerText = `Paragraph ${index + 1} changed using querySelectorAll()`;
+      });
+    }
+
+  </script>
+
+</body>
+</html>
